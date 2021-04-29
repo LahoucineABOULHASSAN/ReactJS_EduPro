@@ -1,0 +1,243 @@
+/*  **************** Navbar style **************** */
+nav.navbar {
+  border-top: 3px solid var(--bs-primary);
+  padding: 0;
+}
+nav.navbar > .container-fluid {
+  margin: 0 2rem;
+}
+nav.navbar .container-fluid .navbar-toggler {
+  border: none;
+  border-radius: 0;
+  padding: 0.2rem 0.4rem;
+  background-color: var(--bs-info);
+  font-size: 1rem;
+}
+nav.navbar .container-fluid .navbar-toggler:focus {
+  box-shadow: none;
+}
+nav.navbar .navbar-brand {
+  color: var(--bs-info);
+  font-weight: 500;
+  margin-right: 2rem;
+}
+nav.navbar .navbar-nav .nav-link {
+  font-weight: 500;
+  padding: 0.7rem 1rem;
+}
+nav.navbar .navbar-nav .nav-link:hover {
+  background: var(--bs-primary);
+}
+nav.navbar .navbar-nav .nav-link.dropdown-toggle:hover {
+  background: none;
+}
+nav.navbar .navbar-nav .isActive {
+  background: var(--bs-primary);
+}
+nav.navbar .dropdown .dropdown-menu {
+  min-width: inherit;
+  padding: 0;
+  background: var(--bs-light);
+  border: none;
+  border-radius: 0;
+  margin: 0;
+}
+.dropdown-item {
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 0.25rem 1.5rem;
+}
+nav.navbar .dropdown .dropdown-menu .dropdown-divider {
+  margin: 0;
+}
+nav.navbar .dropdown .dropdown-menu .dropdown-item:hover {
+  background: var(--bs-primary);
+}
+nav.navbar i.icon {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+  width: 28px;
+  height: 28px;
+  font-size: 0.9rem;
+  border-radius: 50%;
+  background-color: var(--bs-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+.collapse div {
+  margin-bottom: 0.5rem;
+}
+/*  **************** Header style **************** */
+header .carousel .carousel-caption {
+  bottom: 10%;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  border-radius: 12px;
+  color: var(--bs-light);
+  background-color: #00000062;
+}
+/*  **************** Features style **************** */
+section#features .card {
+  border-radius: 0;
+}
+section#features .card .card-header {
+  text-align: center;
+}
+section#features .card .card-header h5 {
+  margin: 0;
+}
+section#features .card .card-header span {
+  margin-right: 1rem;
+  border-radius: 50%;
+  padding: 0.5rem;
+}
+/*  **************** Services style **************** */
+#services .card-body {
+  background: none;
+}
+.list-group li span {
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 0.6rem;
+  border-radius: 50%;
+  background-color: var(--bs-primary);
+  margin-right: 1rem;
+}
+.list-group li span i.icon {
+  margin: 0;
+  color: var(--bs-light);
+}
+.list-group li h6 {
+  font-weight: bold;
+}
+#services form {
+  padding: 3rem 0;
+}
+#services form {
+  border-radius: 50%;
+  background-color: var(--bs-dark);
+}
+#services form input[type='submit'] {
+  font-weight: bold;
+  padding: 0.6rem 1rem;
+  border-radius: 25px;
+}
+/*  **************** Teachers style **************** */
+#teachers .card-img {
+  height: 50vh;
+}
+/*  **************** Courses style **************** */
+#courses form {
+  width: 60%;
+  margin: 0 auto;
+}
+#courses form .form-control {
+  width: 100%;
+  border: 1px solid var(--bs-dark);
+  border-radius: 5px;
+  background-color: var(--bs-dark);
+  color: #fff;
+  margin: 1rem 0;
+}
+#courses .carousel-caption {
+  bottom: 0;
+  left: 0;
+  text-align: start;
+  font-weight: bold;
+  padding: 0.6rem 1rem;
+  color: var(--bs-light);
+  text-shadow: 0px 0px 10px var(--bs-dark);
+}
+#courses i.icon {
+  color: var(--light);
+}
+.info .avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+.info .card-link {
+  font-weight: bold;
+  margin-right: 1rem;
+  color: var(--bs-dark);
+}
+#courses .info .btn {
+  float: right;
+}
+#courses nav {
+  width: fit-content;
+  margin: 0 auto;
+}
+#courses nav .page-link {
+  color: var(--bs-success);
+}
+#courses nav .page-item.active .page-link {
+  background-color: var(--bs-success);
+  color: var(--bs-dark);
+  border-color: none;
+}
+#courses nav .page-item.disabled .page-link {
+  background-color: var(--bs-light);
+  color: var(--bs-secondary);
+}
+/*  **************** Reviews style **************** */
+.reviewer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.reviewer div {
+  line-height: 1.1rem;
+}
+#reviews p {
+  text-align: justify;
+}
+/*  **************** Footer style **************** */
+footer #contact-us {
+  background: var(--bs-info);
+}
+footer #infos {
+  background: var(--bs-dark);
+  color: var(--bs-light);
+}
+footer .contact-us {
+  padding: 0.7rem 1rem;
+}
+#footer form {
+  padding: 0;
+}
+#footer #infos .form-control {
+  border: 2px solid var(--bs-primary);
+}
+#footer form .form-control {
+  width: 100%;
+  color: var(--bs-light);
+  border: none;
+  background: var(--bs-dark);
+  border-radius: 5px;
+}
+#footer form .btn {
+  width: 50%;
+  border-width: 2px;
+  border-radius: 25px;
+}
+#footer .card.row {
+  grid-gap: 0;
+  color: var(--bs-dark);
+}
+#footer .card img {
+  width: 100%;
+  height: auto;
+  padding: 0;
+}
+#footer .subscribe {
+  padding: 1rem;
+}
+#infos .row .col:last-child small {
+  margin-right: 0.5rem;
+}
