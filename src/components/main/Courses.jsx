@@ -1,11 +1,12 @@
-import { useContext, useEffect, useCallback } from 'react';
-import { PaginationContext } from '../../contexts/PaginationContext';
-import { CoursesContext } from '../../contexts/CoursesContext';
-import { paginate } from '../../reducers/pageReducer';
-import Axios from 'axios';
-import Course from './Course';
-import Pagination from './Pagination';
-import SearchForm from './SearchForm';
+import { useContext, useEffect, useCallback } from "react";
+import { PaginationContext } from "../../contexts/PaginationContext";
+import { CoursesContext } from "../../contexts/CoursesContext";
+import { ErrorsContext } from "../../contexts/ErrorsContext";
+import { paginate } from "../../reducers/pageReducer";
+import Axios from "axios";
+import Course from "./Course";
+import Pagination from "./Pagination";
+import SearchForm from "./SearchForm";
 const Courses = () => {
   const {
     courses,
@@ -15,22 +16,34 @@ const Courses = () => {
     setFilteredCourses,
     filteredCourses,
   } = useContext(CoursesContext);
+  const { error, setError } = useContext(ErrorsContext);
   const { page, dispatch } = useContext(PaginationContext);
   const fetchCourses = useCallback(() => {
     const url =
-      'https://raw.githubusercontent.com/LahoucineABOULHASSAN/json_files/main/courses.json';
+      "https://raw.githubusercontent.com/LahoucineABOULHASSAN/json_files/main/courses.json";
     const fetchData = async () => {
-      const res = await Axios.get(url);
-      setGetCourses(res.data);
-      setCourses(paginate(res.data, 1));
+      try {
+        const res = await Axios.get(url);
+        if (res.status !== 200) {
+          throw Error("Couldn't get res");
+        }
+        setGetCourses(res.data);
+        setCourses(paginate(res.data, 1));
+      } catch (err) {
+        const error =
+          err.message === "Network Error"
+            ? "Network Error, Please Check Your Internet Connection"
+            : err.message;
+        setError(error);
+      }
     };
     fetchData();
-  }, [setCourses, setGetCourses]);
+  }, [setCourses, setGetCourses, setError]);
   const handleFilter = (item) => {
     if (!item) {
       setFilteredCourses([]);
       dispatch({
-        type: 'SET_DEFAULT_COURSES',
+        type: "SET_DEFAULT_COURSES",
         numPage: Math.ceil(getcourses.length / 3),
       });
       setCourses(paginate(getcourses, 1));
@@ -40,7 +53,7 @@ const Courses = () => {
       });
       if (results) {
         dispatch({
-          type: 'SET_DEFAULT_COURSES',
+          type: "SET_DEFAULT_COURSES",
           numPage: Math.ceil(results.length / 3),
           pageFiltering: true,
         });
@@ -64,7 +77,7 @@ const Courses = () => {
         Upgrade your skills with the newest courses
       </h5>
       <SearchForm handleFilter={handleFilter} courses={getcourses} />
-      {courses ? (
+      {courses.length ? (
         <>
           <div className="row mb-4">
             {courses.map((course) => (
@@ -85,7 +98,7 @@ const Courses = () => {
         </>
       ) : (
         <p className="alert text-center alert-danger" role="alert">
-          No Courses Found!!
+          {error}
         </p>
       )}
     </section>
