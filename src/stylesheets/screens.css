@@ -2,7 +2,7 @@
 /* No media query for `xs` since this is the default in Bootstrap*/
 /*  ---------------------------------------------------------------- */
 /* Small devices (landscape phones, 300px and up)*/
-@media (min-width: 300px) {
+@media (max-width: 300px) {
   #teachers .card-img {
     height: 300px;
   }
@@ -10,14 +10,46 @@
     height: 270px;
   }
 }
-@media (min-width: 568px) {
+@media (max-width: 568px) {
+  header {
+    margin-top: 48px;
+  }
+  #footer #about,
+  #footer #infos .subscribe {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  #footer #infos .subscribe * {
+    margin-bottom: 0.75rem;
+  }
+  #footer #about img {
+    display: none;
+  }
+  #footer #infos .row {
+    grid-template-columns: 1fr;
+  }
+  #footer #infos .row .col {
+    text-align: center;
+  }
 }
+@media screen and (max-width: 719px) and (min-width: 569px) {
+  #courses form {
+    width: 100%;
+  }
+  #footer #infos .row {
+    grid-template-columns: 1fr 1fr;
+  }
+  #reviews .row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 /* Medium devices (tablets, 720px and up)*/
 @media (min-width: 720px) {
   #services .row {
     grid-template-columns: 1fr;
   }
-  #infos.row .row,
+  #footer #infos .row,
   #teachers .row {
     grid-template-columns: 1fr 1fr;
   }
@@ -53,56 +85,11 @@
 }
 /* X-Large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) {
-}
-/* XX-Large devices (larger desktops, 1400px and up)**/
-@media (min-width: 1400px) {
   .row {
-    max-width: 80%;
+    width: 95%;
     grid-gap: 3rem;
-    margin: auto;
   }
-}
-@media (min-width: 2400px) {
-  #teachers .card-img {
-    height: 550px;
-  }
-  #courses .card-img {
-    height: 470px;
-  }
-  body {
-    font-size: 2.3em;
-  }
-  h1 {
-    font-size: 5rem;
-  }
-  h2 {
-    font-size: 4rem;
-  }
-  h5 {
-    font-size: 3rem;
-  }
-  h6 {
-    font-size: 2rem;
-  }
-  .dropdown-menu,
-  .dropdown-item,
-  .navbar-brand,
-  .form-control,
-  .list-group li span,
-  .btn,
-  .btn-sm {
-    font-size: inherit;
-  }
-  nav.navbar i.icon {
-    width: 62px;
-    height: 62px;
-    font-size: inherit;
-  }
-  .info .avatar {
-    width: 92px;
-    height: 92px;
-  }
-  .reviewer div {
-    line-height: inherit;
+  p {
+    font-size: 1.2rem;
   }
 }

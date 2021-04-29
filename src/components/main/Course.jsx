@@ -7,9 +7,9 @@ const Course = ({ course }) => {
         <img className="card-img" src={img} alt={title} />
         <div className="carousel-caption d-none d-md-block">
           <span>
-            <i className="calendar alternate icon"></i> {start + ' - '}
+            <i className="calendar alternate icon"></i> {start + " - "}
           </span>
-          <span>{duration + ' Hours'}</span>
+          <span>{duration + " Hours"}</span>
         </div>
       </div>
       <div className="card-body mb-1">
@@ -19,12 +19,14 @@ const Course = ({ course }) => {
         </p>
       </div>
       <div className="card-body info">
-        <img className="avatar" src={image} alt={name} />
-        <a className="card-link" href={'#' + name}>
-          {name}
-        </a>
-        <button className={premium ? 'btn btn-success' : 'btn btn-info'}>
-          {premium ? '$ ' + price : 'Free'}
+        <div>
+          <img className="avatar" src={image} alt={name} />
+          <a className="card-link" href={"#" + name}>
+            {name}
+          </a>
+        </div>
+        <button className={premium ? "btn btn-success" : "btn btn-info"}>
+          {premium ? "$ " + price : "Free"}
         </button>
       </div>
     </div>

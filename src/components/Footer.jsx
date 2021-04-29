@@ -1,14 +1,12 @@
-import AboutUs from './footer/AboutUs';
-import ContactUs from './footer/ContactUs';
-import Infos from './footer/Infos';
+import AboutUs from "./footer/AboutUs";
+import ContactUs from "./footer/ContactUs";
+import Infos from "./footer/Infos";
 
 const Footer = () => {
   return (
     <footer id="footer">
-      <div id="contact-us" className="row">
-        <AboutUs />
-        <ContactUs />
-      </div>
+      <AboutUs />
+      <ContactUs />
       <Infos />
     </footer>
   );

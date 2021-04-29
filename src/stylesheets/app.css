@@ -1,17 +1,20 @@
 /*  **************** Navbar style **************** */
 nav.navbar {
-  border-top: 3px solid var(--bs-primary);
   padding: 0;
+  margin: 0 auto;
+  max-width: 1724px;
 }
 nav.navbar > .container-fluid {
-  margin: 0 2rem;
+  margin: 0;
+  padding: 0.5rem 1.5rem;
+  background: var(--bs-dark);
 }
 nav.navbar .container-fluid .navbar-toggler {
   border: none;
+  font-size: 1rem;
   border-radius: 0;
   padding: 0.2rem 0.4rem;
-  background-color: var(--bs-info);
-  font-size: 1rem;
+  background: var(--bs-info);
 }
 nav.navbar .container-fluid .navbar-toggler:focus {
   box-shadow: none;
@@ -22,11 +25,15 @@ nav.navbar .navbar-brand {
   margin-right: 2rem;
 }
 nav.navbar .navbar-nav .nav-link {
+  color: var(--bs-light);
   font-weight: 500;
   padding: 0.7rem 1rem;
 }
 nav.navbar .navbar-nav .nav-link:hover {
   background: var(--bs-primary);
+}
+nav.navbar .navbar-nav .nav-link.dropdown-toggle {
+  color: #fff;
 }
 nav.navbar .navbar-nav .nav-link.dropdown-toggle:hover {
   background: none;
@@ -37,15 +44,18 @@ nav.navbar .navbar-nav .isActive {
 nav.navbar .dropdown .dropdown-menu {
   min-width: inherit;
   padding: 0;
-  background: var(--bs-light);
+  background: none;
   border: none;
   border-radius: 0;
   margin: 0;
 }
 .dropdown-item {
+  color: #fff;
   font-weight: 500;
   font-size: 0.9rem;
-  padding: 0.25rem 1.5rem;
+  padding: 0.25rem 0;
+  margin-left: 1.5rem;
+  padding-left: 1.5rem;
 }
 nav.navbar .dropdown .dropdown-menu .dropdown-divider {
   margin: 0;
@@ -115,13 +125,13 @@ section#features .card .card-header span {
   font-weight: bold;
 }
 #services form {
-  padding: 3rem 0;
+  padding: 3rem 1rem;
 }
 #services form {
-  border-radius: 50%;
+  border-radius: 50px;
   background-color: var(--bs-dark);
 }
-#services form input[type='submit'] {
+#services form input[type="submit"] {
   font-weight: bold;
   padding: 0.6rem 1rem;
   border-radius: 25px;
@@ -166,20 +176,23 @@ section#features .card .card-header span {
   margin-right: 1rem;
   color: var(--bs-dark);
 }
-#courses .info .btn {
-  float: right;
+#courses .info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 #courses nav {
   width: fit-content;
   margin: 0 auto;
 }
 #courses nav .page-link {
-  color: var(--bs-success);
+  color: var(--bs-dark);
 }
 #courses nav .page-item.active .page-link {
-  background-color: var(--bs-success);
-  color: var(--bs-dark);
-  border-color: none;
+  background: var(--bs-dark);
+  color: var(--bs-light);
+  border: none;
 }
 #courses nav .page-item.disabled .page-link {
   background-color: var(--bs-light);
@@ -198,21 +211,56 @@ section#features .card .card-header span {
   text-align: justify;
 }
 /*  **************** Footer style **************** */
-footer #contact-us {
-  background: var(--bs-info);
+footer #about {
+  padding: 0;
+  grid-gap: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+footer #about .card-body {
+  display: flex;
+  align-items: center;
+  color: var(--bs-light);
+  flex-direction: column;
+  justify-content: center;
+  background: var(--bs-dark);
+}
+footer #about h2,
+footer #about small {
+  color: var(--bs-info);
+}
+footer .contact-us {
+  padding: 2.5rem 1rem;
+  text-align: center;
+  background: var(--bs-secondary);
+}
+#footer .contact-us form {
+  width: 80%;
+  max-width: 720px;
+  margin: 0 auto;
 }
 footer #infos {
+  padding: 2rem 0;
   background: var(--bs-dark);
   color: var(--bs-light);
 }
-footer .contact-us {
-  padding: 0.7rem 1rem;
+footer #infos .subscribe {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
 }
-#footer form {
-  padding: 0;
+footer #infos .subscribe form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 #footer #infos .form-control {
-  border: 2px solid var(--bs-primary);
+  width: 70%;
+  margin: 0 1rem;
+  border: 1px solid var(--bs-primary);
+}
+#footer #infos .row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 }
 #footer form .form-control {
   width: 100%;
@@ -221,18 +269,13 @@ footer .contact-us {
   background: var(--bs-dark);
   border-radius: 5px;
 }
-#footer form .btn {
-  width: 50%;
-  border-width: 2px;
-  border-radius: 25px;
-}
 #footer .card.row {
   grid-gap: 0;
   color: var(--bs-dark);
 }
 #footer .card img {
   width: 100%;
-  height: auto;
+  height: 100%;
   padding: 0;
 }
 #footer .subscribe {

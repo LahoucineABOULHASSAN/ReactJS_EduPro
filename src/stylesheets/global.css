@@ -1,32 +1,34 @@
 /*  **************** Containers **************** */
 .container {
-  width: 85%;
+  width: 90%;
   margin: 0 auto;
   padding: 0;
 }
-section,
-#contact-us,
-#infos {
-  padding: 3rem 7%;
+#root {
+  margin: 0 auto;
+  max-width: 1724px;
+  border: 5px solid var(--bs-primary);
 }
-section:nth-child(odd) .card-body {
-  background: #fff;
+section {
+  width: 100%;
+  padding: 3rem 0;
 }
 section:nth-child(odd) {
-  background-color: var(--bs-light);
+  background: var(--bs-secondary);
 }
-section:first-child {
-  background-color: #fff;
-}
-section:first-child .card-body {
-  background-color: var(--bs-light);
+section:nth-child(even) {
+  background: var(--bs-dark);
+  color: var(--bs-light);
 }
 .row {
+  width: 90%;
   display: grid;
   grid-gap: 1rem;
+  margin: 0 auto;
   grid-template-columns: 1fr;
-  padding: 0;
-  margin: 0;
+}
+#about.row {
+  width: 100%;
 }
 .row > * {
   padding: 0;
@@ -78,17 +80,19 @@ form {
 .d-flex:focus,
 .form-control:focus {
   outline: none;
-  background-color: #fff;
-  border-color: none;
   box-shadow: none;
+  border: none;
+  border-color: none;
+  color: var(--bs-light);
+  background: #000000a1;
 }
 form .form-control {
-  width: 85%;
-  color: var(--bs-light);
-  background: none;
+  width: 100%;
   border: none;
-  border-radius: 5px;
-  border-bottom: 1px solid var(--bs-light);
+  background: none;
+  border-radius: 0;
+  color: var(--bs-light);
+  border-bottom: 1px solid var(--bs-primary);
 }
 /*  **************** Icons and Buttons **************** */
 i.icon {
@@ -145,14 +149,20 @@ i.icon.instagram:hover {
   color: var(--bs-dark);
   border: none;
 }
+.btn-info:hover {
+  background: #a0f07c;
+}
 .btn-outline-info {
   border-color: var(--bs-info);
   color: var(--bs-info);
 }
 .btn-success {
-  background: var(--bs-success);
+  background: var(--bs-primary);
   color: var(--bs-dark);
   border: none;
+}
+.btn-success:hover {
+  background: #039fbb;
 }
 .btn-danger {
   background: var(--bs-danger);

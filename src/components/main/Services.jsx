@@ -1,4 +1,4 @@
-import SignUp from './SignUp';
+import SignUp from "./SignUp";
 
 const Services = () => {
   return (
@@ -6,7 +6,7 @@ const Services = () => {
       <div className="row">
         <SignUp />
         <div className="col">
-          <h2 className="card-title  text-dark mb-4">
+          <h2 className="card-title  text-dark mb-4 text-center">
             Start your journey to a better life with online practical courses
           </h2>
           <div className="card-body">
