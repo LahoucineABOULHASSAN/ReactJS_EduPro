@@ -1,18 +1,24 @@
-import Menu from './nav/Menu';
+import Menu from "./nav/Menu";
 const Nav = () => {
-  const isActive = (event) => {
-    const navLinks = document.querySelectorAll('.nav-link');
+  const isActive = (event, elem) => {
+    const navLinks = document.querySelectorAll(".nav-link");
     navLinks.forEach((elem) => {
       if (elem === event.target) {
-        event.target.classList.add('isActive');
-      } else elem.classList.remove('isActive');
+        event.target.classList.add("isActive");
+      } else elem.classList.remove("isActive");
     });
-    const dropdownItems = document.querySelectorAll('.dropdown-item');
+    const dropdownItems = document.querySelectorAll(".dropdown-item");
     dropdownItems.forEach((elem) => {
       if (elem === event.target) {
-        event.target.classList.add('isActive');
-      } else elem.classList.remove('isActive');
+        event.target.classList.add("isActive");
+      } else elem.classList.remove("isActive");
     });
+    scrollTo(elem);
+  };
+  const scrollTo = (elem) => {
+    const sticky = document.querySelector(elem).offsetTop;
+    document.body.scrollTop = sticky - 30; // For Safari
+    document.documentElement.scrollTop = sticky - 30;
   };
   return (
     <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light">

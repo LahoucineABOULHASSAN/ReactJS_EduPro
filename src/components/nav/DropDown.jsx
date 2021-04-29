@@ -1,55 +1,50 @@
 const DropDown = ({ isActive }) => {
   return (
     <li className="nav-item dropdown">
-      <a
+      <span
         className="nav-link dropdown-toggle"
-        href="#about"
         id="navbarDropdown"
         role="button"
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
         Options
-      </a>
+      </span>
       <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
         <li>
-          <a
+          <span
             className="dropdown-item"
-            href="#about"
-            onClick={(event) => isActive(event)}
+            onClick={(event) => isActive(event, "#about")}
           >
             About
-          </a>
+          </span>
         </li>
         <li>
-          <a
+          <span
             className="dropdown-item"
-            href="#contact-us"
-            onClick={(event) => isActive(event)}
+            onClick={(event) => isActive(event, "#contact-us")}
           >
             Contact Us
-          </a>
+          </span>
         </li>
         <li>
           <hr className="dropdown-divider" />
         </li>
         <li>
-          <a
+          <span
             className="dropdown-item"
-            href="#login"
-            onClick={(event) => isActive(event)}
+            onClick={(event) => isActive(event, "#sign-up")}
           >
             Login
-          </a>
+          </span>
         </li>
         <li>
-          <a
+          <span
             className="dropdown-item"
-            href="#sign-up"
-            onClick={(event) => isActive(event)}
+            onClick={(event) => isActive(event, "#sign-up")}
           >
             Sign up
-          </a>
+          </span>
         </li>
       </ul>
     </li>

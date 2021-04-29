@@ -1,34 +1,31 @@
-import DropDown from './DropDown';
+import DropDown from "./DropDown";
 const Menu = ({ isActive }) => {
   return (
     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
       <li className="nav-item">
-        <a
+        <span
           className="nav-link isActive"
           aria-current="page"
-          href="#courses"
-          onClick={(event) => isActive(event)}
+          onClick={(event) => isActive(event, "#courses")}
         >
           Courses
-        </a>
+        </span>
       </li>
       <li className="nav-item">
-        <a
+        <span
           className="nav-link"
-          href="#teachers"
-          onClick={(event) => isActive(event)}
+          onClick={(event) => isActive(event, "#teachers")}
         >
           Teachers
-        </a>
+        </span>
       </li>
       <li className="nav-item">
-        <a
+        <span
           className="nav-link"
-          href="#reviews"
-          onClick={(event) => isActive(event)}
+          onClick={(event) => isActive(event, "#reviews")}
         >
           Reviews
-        </a>
+        </span>
       </li>
       <DropDown isActive={isActive} />
     </ul>
